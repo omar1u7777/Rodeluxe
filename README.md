@@ -13,7 +13,7 @@ En modern, responsiv single-page webbplats för Rodeluxe frisörsalong i Kristia
 - Service-filter pills
 - Kundrecensioner
 - Galleri med lightbox
-- Kontaktformulär (Netlify Forms)
+- Kontaktformulär (Formspree)
 - Google Maps integration
 - Bonus-kort med 3D flip-animation
 - Öppen/stängd badge
@@ -45,7 +45,6 @@ Rodeluxe/
 ├── content.js      # Innehåll (tjänster, recensioner, etc)
 ├── logo.webp       # Logo
 ├── crcode_rodeluxe.webp  # QR-kod för bokning
-├── netlify.toml    # Netlify-konfiguration
 ├── robots.txt      # SEO
 ├── sitemap.xml     # SEO
 └── site.webmanifest  # PWA
@@ -62,9 +61,9 @@ Rodeluxe/
 
 ## Deployment
 
-Sidan är deployad på Netlify: https://rodeluxe-salong.netlify.app
+Sidan är deployad på Vercel: https://rodeluxe.vercel.app
 
-**Säkerhet:** Kontaktformulär hanteras via Netlify Forms (serverless) utan behov av egen backend-server, vilket säkerställer att formulärdata hanteras säkert och effektivt.
+**Säkerhet:** Kontaktformulär hanteras via Formspree utan behov av egen backend-server, vilket säkerställer att formulärdata hanteras säkert och effektivt.
 
 
 
@@ -73,7 +72,7 @@ Sidan är deployad på Netlify: https://rodeluxe-salong.netlify.app
 - **Frontend:** Vanilla JS (ES6+) med fokus på hög prestanda och noll dependencies
 - **3D Grafik:** Three.js för en interaktiv och unik användarupplevelse
 - **SEO & PWA:** Optimerad med metadata, sitemaps och webmanifest för mobilvänlighet
-- **Deployment:** CI/CD via Netlify med automatisk form-hantering (serverless)
+- **Deployment:** CI/CD via Vercel med automatisk form-hantering (Formspree)
 
 ## License
 
