@@ -1165,6 +1165,8 @@ select:focus-visible {
 .contact__qr-text { margin-top: 16px; text-align: center; }
 .contact__qr-text h4 { margin: 0 0 8px; font-size: 16px; font-weight: 600; color: var(--text); }
 .contact__qr-text p { margin: 0; font-size: 13px; color: var(--muted); }
+.contact__qr-link { display: inline-block; margin-top: 12px; font-size: 13px; color: var(--accent); text-decoration: none; transition: color 0.2s ease; }
+.contact__qr-link:hover { color: var(--accent-hover); text-decoration: underline; }
 .kv { display: grid; gap: 0; margin-top: 14px; }
 .kv__row {
   display: flex; align-items: flex-start;
