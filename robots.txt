@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rodeluxe.vercel.app/sitemap.xml
+Sitemap: https://rodeluxesalong.se/sitemap.xml
