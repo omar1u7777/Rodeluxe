@@ -49,7 +49,7 @@ export const CONTACT = {
     "Obs! För snabb bokning: kontakta oss minst 1 timme innan bokning för att undvika krockar. Vi vill ge dig bästa service – din tid är viktig för oss.",
   email: "ahmed.darkoushi99@gmail.com",
   mapEmbedUrl:
-    "https://maps.google.com/maps?q=56.0337,14.1664&z=16&output=embed",
+    "https://maps.google.com/maps?q=Götgatan+18,+290+31+Kristianstad,+Sweden&t=&z=16&ie=UTF8&iwloc=&output=embed",
   mapsUrl:
     "https://maps.app.goo.gl/sskJF94BQNtN2h59A",
 };
