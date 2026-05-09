@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#0a0a0a" />
 
     <title>Rodeluxe – Frisör & Barberare Kristianstad | Herrklippning, Damklippning, Skägg</title>
-    <meta name="description" content="Rodeluxe – premiumfrisörsalong i Kristianstad. Klippning, styling och ansiktsbehandling med fokus på kvalitet, precision och exklusiv upplevelse." />
+    <meta name="description" content="Rodeluxe – frisör & barberare Kristianstad. Herrklippning, damklippning, skägg, styling. Premium kvalitet, precision, exklusiv upplevelse. Boka tid idag!" />
     <meta name="keywords" content="frisör Kristianstad, barberare Kristianstad, herrklippning, damklippning, ansiktsbehandling, Rodeluxe, hårklippning, salong, skägg, styling, herrfrisör, damfrisör, klippning, helsingborg, malmö, skåne" />
     <meta name="author" content="Rodeluxe" />
     <meta name="robots" content="index, follow" />
@@ -14,7 +14,7 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="business.business" />
-    <meta property="og:title" content="Rodeluxe – Premium Frisörsalong i Kristianstad" />
+    <meta property="og:title" content="Rodeluxe – Frisör & Barberare Kristianstad | Herrklippning, Damklippning, Skägg" />
     <meta property="og:description" content="Premiumfrisörsalong med fokus på kvalitet, precision och exklusiv upplevelse. Boka din tid idag." />
     <meta property="og:url" content="https://rodeluxesalong.se/" />
     <meta property="og:image" content="https://cdn.bokadirekt.se/ucdn/ad6f70b9-c165-4a14-866a-92f641518924/" />
@@ -77,7 +77,7 @@
         "worstRating": "1"
       },
       "priceRange": "250–400 kr",
-      "paymentAccepted": ["Cash", "Credit Card", "Swish"],
+      "paymentAccepted": ["Cash", "Credit Card", "Swish", "Klarna"],
       "currenciesAccepted": "SEK"
     }
     </script>
@@ -178,6 +178,32 @@
             "name": "Johan"
           },
           "reviewBody": "Skäggvård på toppnivå! Noggrann, detaljorienterad och resultatet håller länge."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Maria"
+          },
+          "reviewBody": "Fantastisk damklippning! Verkligen uppmärksam och förstår vad man vill ha."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Anders"
+          },
+          "reviewBody": "Bästa salongen i Kristianstad. Proffsigt, trevligt och alltid perfekt resultat."
         }
       ],
       "aggregateRating": {
@@ -217,6 +243,67 @@
       "@type": "Service",
       "name": "Herrklippning",
       "description": "Professionell herrklippning med tvätt och styling",
+      "provider": {
+        "@type": "HairSalon",
+        "name": "Rodeluxe",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Götgatan 18",
+          "addressLocality": "Kristianstad",
+          "addressRegion": "Skåne",
+          "postalCode": "290 31",
+          "addressCountry": "SE"
+        }
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 56.0337,
+          "longitude": 14.1664
+        },
+        "geoRadius": "50000"
+      }
+    }
+    </script>
+
+    <!-- Additional Service Schemas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Damklippning",
+      "description": "Professionell damklippning med tvätt och styling",
+      "provider": {
+        "@type": "HairSalon",
+        "name": "Rodeluxe",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Götgatan 18",
+          "addressLocality": "Kristianstad",
+          "addressRegion": "Skåne",
+          "postalCode": "290 31",
+          "addressCountry": "SE"
+        }
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 56.0337,
+          "longitude": 14.1664
+        },
+        "geoRadius": "50000"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Skäggvård",
+      "description": "Professionell skäggvård och trimning",
       "provider": {
         "@type": "HairSalon",
         "name": "Rodeluxe",
@@ -656,6 +743,7 @@
                   class="btn"
                   data-booking-trigger
                   rel="noopener noreferrer"
+                  aria-label="Boka tid hos Rodeluxe frisör Kristianstad"
                   >Boka nu</a
                 >
               </div>
@@ -828,6 +916,6 @@
       </div>
     </div>
 
-    <script type="module" src="./main.js?v=20260504-75"></script>
+    <script type="module" src="./main.js?v=20260504-76"></script>
   </body>
 </html>
