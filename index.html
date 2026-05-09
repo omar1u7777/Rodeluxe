@@ -10,13 +10,13 @@
     <meta name="keywords" content="frisör Kristianstad, barberare Kristianstad, herrklippning, damklippning, ansiktsbehandling, Rodeluxe" />
     <meta name="author" content="Rodeluxe" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://rodeluxe.netlify.app/" />
+    <link rel="canonical" href="https://rodeluxe.vercel.app/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="business.business" />
     <meta property="og:title" content="Rodeluxe – Premium Frisörsalong i Kristianstad" />
     <meta property="og:description" content="Premiumfrisörsalong med fokus på kvalitet, precision och exklusiv upplevelse. Boka din tid idag." />
-    <meta property="og:url" content="https://rodeluxe.netlify.app/" />
+    <meta property="og:url" content="https://rodeluxe.vercel.app/" />
     <meta property="og:image" content="https://cdn.bokadirekt.se/ucdn/ad6f70b9-c165-4a14-866a-92f641518924/" />
     <meta property="og:locale" content="sv_SE" />
     <meta property="og:site_name" content="Rodeluxe" />
@@ -36,14 +36,17 @@
       "@context": "https://schema.org",
       "@type": "HairSalon",
       "name": "Rodeluxe",
-      "description": "Premiumfrisörsalong i Kristianstad med fokus på kvalitet och precision.",
-      "url": "https://rodeluxe.netlify.app/",
+      "alternateName": "Rodeluxe Salong",
+      "description": "Premiumfrisörsalong i Kristianstad med fokus på kvalitet och precision. Klippning, styling, skägg och ansiktsbehandling.",
+      "url": "https://rodeluxe.vercel.app/",
       "telephone": "+46729304898",
+      "email": "ahmed.darkoushi99@gmail.com",
       "image": "https://cdn.bokadirekt.se/ucdn/ad6f70b9-c165-4a14-866a-92f641518924/",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Götgatan 18",
         "addressLocality": "Kristianstad",
+        "addressRegion": "Skåne",
         "postalCode": "290 31",
         "addressCountry": "SE"
       },
@@ -56,13 +59,76 @@
         {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday"], "opens": "11:00", "closes": "21:00"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "10:00", "closes": "22:00"}
       ],
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 56.0337,
+          "longitude": 14.1664
+        },
+        "geoRadius": "50000"
+      },
       "sameAs": ["https://www.instagram.com/rodeluxe__/", "https://www.facebook.com/p/Rodeluxe-Salong-61573210080819/", "https://www.bokadirekt.se/places/rodeluxe-130945"],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
-        "reviewCount": "52"
+        "reviewCount": "52",
+        "bestRating": "5",
+        "worstRating": "1"
       },
-      "priceRange": "250–400 kr"
+      "priceRange": "250–400 kr",
+      "paymentAccepted": ["Cash", "Credit Card", "Swish"],
+      "currenciesAccepted": "SEK"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hur bokar jag tid hos Rodeluxe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Du kan enkelt boka tid online via Bokadirekt eller Heygoldie. Vi erbjuder även direkt bokning via vår hemsida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vilka tjänster erbjuder Rodeluxe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vi erbjuder herrklippning, damklippning, skäggtrimning, styling och ansiktsbehandlingar med fokus på kvalitet och precision."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Var ligger Rodeluxe i Kristianstad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rodeluxe ligger på Götgatan 18, 290 31 Kristianstad, i centrala Kristianstad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vad kostar en klippning hos Rodeluxe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Våra priser ligger mellan 250–400 kr beroende på tjänst. Vi accepterar kontant, kort och Swish."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vilka är Rodeluxes öppettider?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Måndag 11-21, Tisdag-Söndag 10-22. Vi har öppet alla dagar i veckan."
+          }
+        }
+      ]
     }
     </script>
 
@@ -162,6 +228,24 @@
         </div>
       </div>
     </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Navigering">
+      <div class="container">
+        <ol class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="#hem" itemprop="item" class="breadcrumbs__link">
+              <span itemprop="name">Hem</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name" class="breadcrumbs__current">Rodeluxe Frisörsalong</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </div>
+    </nav>
 
     <!-- Scroll progress -->
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -645,6 +729,6 @@
       </div>
     </div>
 
-    <script type="module" src="./main.js?v=20260504-69"></script>
+    <script type="module" src="./main.js?v=20260504-70"></script>
   </body>
 </html>
