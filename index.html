@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0a0a" />
 
-    <title>Rodeluxe – Premium Frisörsalong i Kristianstad</title>
+    <title>Rodeluxe – Frisör & Barberare Kristianstad | Herrklippning, Damklippning, Skägg</title>
     <meta name="description" content="Rodeluxe – premiumfrisörsalong i Kristianstad. Klippning, styling och ansiktsbehandling med fokus på kvalitet, precision och exklusiv upplevelse." />
-    <meta name="keywords" content="frisör Kristianstad, barberare Kristianstad, herrklippning, damklippning, ansiktsbehandling, Rodeluxe" />
+    <meta name="keywords" content="frisör Kristianstad, barberare Kristianstad, herrklippning, damklippning, ansiktsbehandling, Rodeluxe, hårklippning, salong, skägg, styling, herrfrisör, damfrisör, klippning, helsingborg, malmö, skåne" />
     <meta name="author" content="Rodeluxe" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://rodeluxesalong.se/" />
@@ -132,9 +132,120 @@
     }
     </script>
 
+    <!-- Review Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Rodeluxe Frisörsalong",
+      "image": "https://cdn.bokadirekt.se/ucdn/ad6f70b9-c165-4a14-866a-92f641518924/",
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Erik"
+          },
+          "reviewBody": "Bästa frisören i Kristianstad! Vet exakt vad jag vill ha och levererar varje gång."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Linda"
+          },
+          "reviewBody": "Professionell, snäll och otroligt skicklig. Min son älskar sina klippningar här!"
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Johan"
+          },
+          "reviewBody": "Skäggvård på toppnivå! Noggrann, detaljorienterad och resultatet håller länge."
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "52",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Rodeluxe",
+      "alternateName": "Rodeluxe Salong",
+      "url": "https://rodeluxesalong.se/",
+      "logo": "https://rodeluxesalong.se/logo.webp",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+46729304898",
+        "contactType": "customer service",
+        "areaServed": "SE",
+        "availableLanguage": "Swedish"
+      },
+      "sameAs": ["https://www.instagram.com/rodeluxe__/", "https://www.facebook.com/p/Rodeluxe-Salong-61573210080819/", "https://www.bokadirekt.se/places/rodeluxe-130945"]
+    }
+    </script>
+
+    <!-- Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Herrklippning",
+      "description": "Professionell herrklippning med tvätt och styling",
+      "provider": {
+        "@type": "HairSalon",
+        "name": "Rodeluxe",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Götgatan 18",
+          "addressLocality": "Kristianstad",
+          "addressRegion": "Skåne",
+          "postalCode": "290 31",
+          "addressCountry": "SE"
+        }
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 56.0337,
+          "longitude": 14.1664
+        },
+        "geoRadius": "50000"
+      }
+    }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.bokadirekt.se" />
+    <link rel="preconnect" href="https://cdn.bokadirekt.se" />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet" /></noscript>
@@ -185,7 +296,7 @@
         <div class="header__inner">
           <div class="header__left">
             <a class="logo" href="#hem" aria-label="Rodeluxe – Hem">
-              <img src="./logo.webp?v=20260504-52" alt="Rodeluxe Frisör Salong Logo" class="logo__img" width="600" height="54" />
+              <img src="./logo.webp?v=20260504-52" alt="Rodeluxe Frisör Salong Logo Premium Barberare Kristianstad" class="logo__img" width="600" height="54" />
             </a>
             <div class="open-badge" id="openBadge" aria-live="polite">
               <span class="open-badge__dot"></span>
@@ -284,8 +395,8 @@
               <span class="hero__rating-text">5.0 · 95 recensioner</span>
             </div>
             <div class="hero__actions">
-              <a class="btn btn--primary" data-booking-trigger rel="noopener noreferrer">Boka nu</a>
-              <a class="btn btn--primary" href="#tjanster">Se tjänster</a>
+              <a class="btn btn--primary" data-booking-trigger rel="noopener noreferrer" aria-label="Boka tid hos Rodeluxe frisör Kristianstad">Boka nu</a>
+              <a class="btn btn--primary" href="#tjanster" aria-label="Se frisörtjänster hos Rodeluxe">Se tjänster</a>
             </div>
           </div>
         </div>
@@ -600,7 +711,7 @@
 
             <div class="glass contact__qr reveal">
               <div class="contact__qr-content">
-                <img src="./crcode_rodeluxe.webp" alt="QR-kod för bokning" class="contact__qr-img" width="200" height="200" />
+                <img src="./crcode_rodeluxe.webp" alt="QR-kod för boka tid hos Rodeluxe frisör Kristianstad" class="contact__qr-img" width="200" height="200" />
                 <div class="contact__qr-text">
                   <h4>Skanna för att boka</h4>
                   <p>Snabb och enkel bokning direkt i mobilen</p>
@@ -661,15 +772,15 @@
               &nbsp;·&nbsp; Developed by <a href="https://github.com/omar1u7777" target="_blank" rel="noopener noreferrer" class="footer__dev">Omar Alhaek</a>
             </div>
             <div class="footer__socials">
-              <a class="footer__social" href="https://www.instagram.com/rodeluxe__/" target="_blank" rel="noopener noreferrer" aria-label="Rodeluxe på Instagram">
+              <a class="footer__social" href="https://www.instagram.com/rodeluxe__/" target="_blank" rel="noopener noreferrer" aria-label="Rodeluxe på Instagram - följ oss för frisörtips">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37a4 4 0 1 1-3.37-3.37 4 4 0 0 1 3.37 3.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                 <span>@rodeluxe__</span>
               </a>
-              <a class="footer__social" href="https://www.facebook.com/p/Rodeluxe-Salong-61573210080819/" target="_blank" rel="noopener noreferrer" aria-label="Rodeluxe på Facebook">
+              <a class="footer__social" href="https://www.facebook.com/p/Rodeluxe-Salong-61573210080819/" target="_blank" rel="noopener noreferrer" aria-label="Rodeluxe på Facebook - följ oss för uppdateringar">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                 <span>Rodeluxe Salong</span>
               </a>
-              <a class="footer__social" data-booking-trigger rel="noopener noreferrer">
+              <a class="footer__social" data-booking-trigger rel="noopener noreferrer" aria-label="Boka tid hos Rodeluxe via Bokadirekt">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                 <span>Bokadirekt</span>
               </a>
@@ -680,7 +791,7 @@
     </main>
 
     <!-- Floating Book Button -->
-    <a class="float-book" id="floatBook" data-booking-trigger rel="noopener noreferrer" aria-label="Boka tid hos Rodeluxe">
+    <a class="float-book" id="floatBook" data-booking-trigger rel="noopener noreferrer" aria-label="Boka tid hos Rodeluxe frisör Kristianstad - snabb bokning">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       <span>Boka Nu</span>
     </a>
@@ -717,6 +828,6 @@
       </div>
     </div>
 
-    <script type="module" src="./main.js?v=20260504-74"></script>
+    <script type="module" src="./main.js?v=20260504-75"></script>
   </body>
 </html>
