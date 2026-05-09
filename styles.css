@@ -249,50 +249,6 @@ select:focus-visible {
   border-bottom: 1px solid rgba(154, 122, 66, 0.12);
   transition: background 0.3s ease, border-color 0.3s ease;
 }
-
-/* ─── Breadcrumbs ─────────────────────────────────────── */
-.breadcrumbs {
-  padding: 12px 0;
-  background: var(--bg-2);
-  border-bottom: 1px solid var(--border);
-  margin-top: 72px;
-}
-.breadcrumbs__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--muted);
-}
-.breadcrumbs__item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.breadcrumbs__item::after {
-  content: "/";
-  color: var(--border-2);
-  font-size: 11px;
-}
-.breadcrumbs__item:last-child::after {
-  content: none;
-}
-.breadcrumbs__link {
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-.breadcrumbs__link:hover {
-  color: var(--gold);
-  text-decoration: underline;
-}
-.breadcrumbs__current {
-  color: var(--text);
-  font-weight: 500;
-}
 .header.scrolled {
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
