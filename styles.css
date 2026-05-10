@@ -2182,3 +2182,78 @@ select:focus-visible {
   .stats-grid        { grid-template-columns: 1fr 1fr; gap: 8px; }
   .stat-card__number { font-size: 28px; }
 }
+
+/* ─── Tablet Landscape Fix (768-1024px) ─────────────── */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .hero               { min-height: 90vh; }
+  .hero__content      { padding-top: 40px; }
+  .owner-3d-card      { gap: 30px; }
+  .owner-img          { max-width: 320px; }
+}
+
+/* ─── Short Screens (height ≤ 600px) ────────────────── */
+@media (max-height: 600px) {
+  .hero               { min-height: 100vh; padding: 80px 0 40px; }
+  .header             { padding: 8px 0; }
+  .preloader__logo    { width: 60px; }
+}
+
+/* ─── Large Screens (≥ 1440px) ──────────────────────── */
+@media (min-width: 1440px) {
+  .container          { max-width: 1320px; }
+  .h1                 { font-size: clamp(56px, 6vw, 96px); }
+  .owner-3d-card      { max-width: 1100px; gap: 60px; }
+  .owner-img          { max-width: 480px; }
+}
+
+/* ─── 4K Displays (≥ 1920px) ────────────────────────── */
+@media (min-width: 1920px) {
+  .container          { max-width: 1480px; }
+  .hero__content      { max-width: 1200px; }
+}
+
+/* ─── High DPI / Retina ─────────────────────────────── */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .logo__img,
+  .gallery-item img,
+  .owner-img         { image-rendering: -webkit-optimize-contrast; }
+}
+
+/* ─── Print Styles ──────────────────────────────────── */
+@media print {
+  .header, .footer, .scroll-top, .float-book, .preloader,
+  .cursor, .cursor-trail, .hero__canvas, .hero__particles,
+  .lightbox, .lightbox__backdrop, .booking-modal,
+  .scroll-progress { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .section { padding: 20px 0 !important; page-break-inside: avoid; }
+  a { color: #000 !important; text-decoration: underline !important; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 11px; }
+}
+
+/* ─── Hidden but accessible (SEO) ───────────────────── */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* ─── Focus styles (Accessibility) ──────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── Forced colors (Windows High Contrast) ─────────── */
+@media (forced-colors: active) {
+  .btn, .nav__link, .filter-pill {
+    border: 1px solid currentColor;
+  }
+}

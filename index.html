@@ -3,14 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#c9a96e" media="(prefers-color-scheme: light)" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Rodeluxe" />
+    <meta name="application-name" content="Rodeluxe" />
+    <meta name="msapplication-TileColor" content="#0a0a0a" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="geo.region" content="SE-M" />
+    <meta name="geo.placename" content="Kristianstad" />
+    <meta name="geo.position" content="56.0337;14.1664" />
+    <meta name="ICBM" content="56.0337, 14.1664" />
 
-    <title>Rodeluxe – Frisör & Barberare Kristianstad | Herrklippning, Damklippning, Skägg</title>
+    <title>Rodeluxe – Bästa Frisör & Barberare i Kristianstad | Herrklippning, Damklippning, Skägg</title>
     <meta name="description" content="Rodeluxe – frisör & barberare Kristianstad. Herrklippning, damklippning, skägg, styling. Premium kvalitet, precision, exklusiv upplevelse. Boka tid idag!" />
     <meta name="keywords" content="frisör Kristianstad, barberare Kristianstad, herrklippning, damklippning, ansiktsbehandling, Rodeluxe, hårklippning, salong, skägg, styling, herrfrisör, damfrisör, klippning, helsingborg, malmö, skåne" />
     <meta name="author" content="Rodeluxe" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://rodeluxesalong.se/" />
+    <link rel="alternate" hreflang="sv-SE" href="https://rodeluxesalong.se/" />
+    <link rel="alternate" hreflang="x-default" href="https://rodeluxesalong.se/" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="./logo.webp?v=20260504-52" fetchpriority="high" />
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/cinzel/v23/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnTYrvDE5ZdqU.woff2" crossorigin />
 
     <!-- Open Graph -->
     <meta property="og:type" content="business.business" />
@@ -71,8 +93,8 @@
       "sameAs": ["https://www.instagram.com/rodeluxe__/", "https://www.facebook.com/p/Rodeluxe-Salong-61573210080819/", "https://www.bokadirekt.se/places/rodeluxe-130945"],
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "52",
+        "ratingValue": "5.0",
+        "reviewCount": "95",
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -208,8 +230,8 @@
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "52",
+        "ratingValue": "5.0",
+        "reviewCount": "95",
         "bestRating": "5",
         "worstRating": "1"
       }
@@ -328,6 +350,125 @@
     }
     </script>
 
+    <!-- WebSite Schema with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Rodeluxe",
+      "alternateName": "Rodeluxe Frisörsalong",
+      "url": "https://rodeluxesalong.se/",
+      "inLanguage": "sv-SE",
+      "description": "Premium frisörsalong i Kristianstad. Klippning, skägg, styling och ansiktsbehandling.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Rodeluxe",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://rodeluxesalong.se/logo.webp"
+        }
+      },
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.bokadirekt.se/places/rodeluxe-130945",
+          "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+        },
+        "result": {
+          "@type": "Reservation",
+          "name": "Boka tid hos Rodeluxe"
+        }
+      }
+    }
+    </script>
+
+    <!-- Person Schema (Owner) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ahmed Darkoushi",
+      "jobTitle": "Grundare & Huvudfrisör",
+      "worksFor": {
+        "@type": "HairSalon",
+        "name": "Rodeluxe",
+        "url": "https://rodeluxesalong.se/"
+      },
+      "knowsAbout": ["Herrklippning", "Damklippning", "Skäggvård", "Hårstyling", "Ansiktsbehandling"],
+      "image": "https://rodeluxesalong.se/agaren.jpg",
+      "telephone": "+46729304898",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Götgatan 18",
+        "addressLocality": "Kristianstad",
+        "addressRegion": "Skåne",
+        "postalCode": "290 31",
+        "addressCountry": "SE"
+      }
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Hem", "item": "https://rodeluxesalong.se/"},
+        {"@type": "ListItem", "position": 2, "name": "Tjänster", "item": "https://rodeluxesalong.se/#tjanster"},
+        {"@type": "ListItem", "position": 3, "name": "Om oss", "item": "https://rodeluxesalong.se/#om"},
+        {"@type": "ListItem", "position": 4, "name": "Galleri", "item": "https://rodeluxesalong.se/#galleri"},
+        {"@type": "ListItem", "position": 5, "name": "Kontakt", "item": "https://rodeluxesalong.se/#kontakt"}
+      ]
+    }
+    </script>
+
+    <!-- Speakable Schema (Voice Search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Rodeluxe – Frisör & Barberare Kristianstad",
+      "url": "https://rodeluxesalong.se/",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".section__title", ".section__subtitle", ".hero__sub", "#aboutText"]
+      }
+    }
+    </script>
+
+    <!-- LocalBusiness (additional for local SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://rodeluxesalong.se/#localbusiness",
+      "name": "Rodeluxe Frisörsalong",
+      "image": "https://rodeluxesalong.se/logo.webp",
+      "url": "https://rodeluxesalong.se/",
+      "telephone": "+46729304898",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Götgatan 18",
+        "addressLocality": "Kristianstad",
+        "postalCode": "290 31",
+        "addressCountry": "SE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 56.0337,
+        "longitude": 14.1664
+      },
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "11:00", "closes": "21:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "10:00", "closes": "22:00"}
+      ],
+      "hasMap": "https://www.google.com/maps/place/Rodeluxe+hair+salong/@56.03367,14.166447,16z/"
+    }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -341,7 +482,7 @@
     <link rel="manifest" href="./site.webmanifest" />
     <link rel="apple-touch-icon" href="./favicon.svg" />
 
-    <link rel="stylesheet" href="./styles.css?v=20260504-72" />
+    <link rel="stylesheet" href="./styles.css?v=20260504-73" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   </head>
 
@@ -383,7 +524,7 @@
         <div class="header__inner">
           <div class="header__left">
             <a class="logo" href="#hem" aria-label="Rodeluxe – Hem">
-              <img src="./logo.webp?v=20260504-52" alt="Rodeluxe Frisör Salong Logo Premium Barberare Kristianstad" class="logo__img" width="600" height="54" />
+              <img src="./logo.webp?v=20260504-52" alt="Rodeluxe Frisör Salong Logo Premium Barberare Kristianstad" class="logo__img" width="600" height="54" fetchpriority="high" decoding="async" />
             </a>
             <div class="open-badge" id="openBadge" aria-live="polite">
               <span class="open-badge__dot"></span>
@@ -528,7 +669,7 @@
                   </div>
                   <div class="bonus-card__contact">
                     <p>📞 072 930 48 98</p>
-                    <p>📸 @rodelux_</p>
+                    <p>📸 @rodeluxe__</p>
                     <p>👤 Rodeluxe</p>
                   </div>
                 </div>
@@ -661,7 +802,7 @@
             <div class="owner-3d-wrapper">
               <div class="owner-3d-card">
                 <div class="owner-3d-image">
-                  <img src="./ägaren" alt="Ahmed Darkoushi - Ägare Rodeluxe" class="owner-img" />
+                  <img src="./agaren.jpg?v=1" alt="Ahmed Darkoushi - Grundare och Huvudfrisör Rodeluxe Kristianstad" class="owner-img" loading="lazy" decoding="async" width="400" height="500" />
                   <div class="owner-3d-glow"></div>
                   <div class="owner-3d-particles"></div>
                 </div>
@@ -889,6 +1030,20 @@
         </div>
       </section>
 
+      <!-- SEO Hidden Content for Local Search -->
+      <div class="visually-hidden" aria-hidden="true">
+        <h2>Rodeluxe – Bästa frisör i Kristianstad</h2>
+        <p>Rodeluxe är en premium frisörsalong och barberare i centrala Kristianstad, beläget på Götgatan 18. Vi erbjuder herrklippning, damklippning, skäggvård, hårfärgning, keratin-behandling, hårpermanent, ansiktsbehandling och styling. Vår salong betjänar Kristianstad, Åhus, Hässleholm, Bromölla, Sölvesborg, Kävlinge, Malmö, Helsingborg, Lund och hela Skåne. Boka tid online via Bokadirekt eller ring 072-930 48 98. Öppet alla dagar i veckan med flexibla tider. Telefon: +46729304898. Email: ahmed.darkoushi99@gmail.com. Premium frisör, barberare, hairstylist Kristianstad. Bästa salongen i Skåne med 95+ recensioner och 5.0 betyg på Google. Certifierad frisör med över 10 års erfarenhet. Trendig, professionell och personlig service för både män och kvinnor.</p>
+        <address>
+          Rodeluxe Frisörsalong<br>
+          Götgatan 18<br>
+          290 31 Kristianstad<br>
+          Skåne, Sverige<br>
+          Tel: <a href="tel:+46729304898">+46 72 930 48 98</a><br>
+          Email: <a href="mailto:ahmed.darkoushi99@gmail.com">ahmed.darkoushi99@gmail.com</a>
+        </address>
+      </div>
+
       <footer class="footer">
         <div class="container">
           <div class="footer__inner">
@@ -953,6 +1108,6 @@
       </div>
     </div>
 
-    <script type="module" src="./main.js?v=20260504-81"></script>
+    <script type="module" src="./main.js?v=20260504-82"></script>
   </body>
 </html>
