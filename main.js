@@ -1,4 +1,4 @@
-import { ABOUT_TEXT, BOOKING_URL, BRAND, CONTACT, GALLERY_IMAGES, SERVICES } from "./content.js?v=20260504-41";
+import { ABOUT_TEXT, BOOKING_URL, BRAND, CONTACT, GALLERY_IMAGES, SERVICES } from "./content.js?v=20260504-42";
 
 /* ─── Feature flags ─────────────────────────────────── */
 const PREFERS_REDUCED_MOTION = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
@@ -332,7 +332,7 @@ function renderGallery() {
   const allImages = [...GALLERY_IMAGES, ...GALLERY_IMAGES];
   allImages.forEach((img, i) => {
     const figure = document.createElement("figure");
-    figure.className = "gallery-item";
+    figure.className = i === 0 ? "gallery-item gallery-item--3d" : "gallery-item";
     figure.setAttribute("role", "button");
     figure.setAttribute("tabindex", "0");
     figure.setAttribute("aria-label", `Öppna ${img.alt}`);

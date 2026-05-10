@@ -51,7 +51,7 @@ export const CONTACT = {
   mapEmbedUrl:
     "https://maps.google.com/maps?q=Götgatan+18,+290+31+Kristianstad,+Sweden&t=&z=16&ie=UTF8&iwloc=&output=embed",
   mapsUrl:
-    "https://maps.app.goo.gl/sskJF94BQNtN2h59A",
+    "https://www.google.com/maps/place/Rodeluxe+hair+salong/@56.03367,14.166447,16z/data=!4m15!1m8!3m7!1s0x4654034be36135dd:0x159e9e3137dba434!2sG%C3%B6tgatan+18,+290+31+Kristianstad,+Sverige!3b1!8m2!3d56.0336703!4d14.1664469!16s%2Fg%2F11c21844kk!3m5!1s0x465403766db0ef81:0x9316a995a2f8face!8m2!3d56.0336703!4d14.1664469!16s%2Fg%2F11wnzncm64?hl=sv",
 };
 
 const BD = "https://www.bokadirekt.se/places/rodeluxe-130945";
