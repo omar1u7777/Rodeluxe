@@ -337,7 +337,7 @@ function renderGallery() {
     figure.setAttribute("tabindex", "0");
     figure.setAttribute("aria-label", `Öppna ${img.alt}`);
     figure.innerHTML = `
-      <img src="${img.src}" alt="${img.alt}" loading="lazy" decoding="async" />
+      <img src="${img.src}" alt="${img.alt}" width="320" height="240" loading="lazy" decoding="async" />
       <div class="gallery-item__open">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Förstora
