@@ -174,7 +174,7 @@ export const SERVICES = [
         name: "Bonuskort",
         durationMin: 0,
         price: { type: "fixed", sek: 0 },
-        description: "9:e klippningen gratis! Samla stämpel på varje besök.",
+        description: "8:e klippningen gratis! Samla stämpel på varje besök.",
       },
     ],
   },
