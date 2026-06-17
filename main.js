@@ -191,7 +191,7 @@ function setBookingLinks() {
       const preferredUrl = savedPreference === "bokadirekt"
         ? "https://www.bokadirekt.se/places/rodeluxe-130945"
         : "https://book.heygoldie.com/Rodeluxe";
-      window.open(preferredUrl, "_blank");
+      window.open(preferredUrl, "_blank", "noopener");
     } else {
       // Show modal
       modal.setAttribute("aria-hidden", "false");
@@ -498,42 +498,9 @@ function setupContactForm() {
       console.error("Form submission error:", error);
       if (status) { status.textContent = "Ett fel uppstod. Försök igen eller kontakta oss direkt."; status.className = "form-status error"; }
     } finally {
-      if (submit) { submit.disabled = false; submit.textContent = "Skicka"; }
+      if (submit) { submit.disabled = false; submit.textContent = "Skicka meddelande"; }
     }
   });
-}
-
-/* ─── Booking Modal ──────────────────────────────────── */
-function setupBookingModal() {
-  const modal = document.getElementById("bookingModal");
-  const openBtn = document.getElementById("openBookingModal");
-  const closeBtn = document.getElementById("closeBookingModal");
-  const rememberCheckbox = document.getElementById("rememberBookingChoice");
-  
-  if (!modal || !openBtn || !closeBtn) return;
-
-  openBtn.addEventListener("click", () => modal.classList.add("active"));
-  closeBtn.addEventListener("click", () => modal.classList.remove("active"));
-  
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.classList.remove("active");
-  });
-
-  // Remember booking choice
-  if (rememberCheckbox) {
-    const savedChoice = localStorage.getItem("bookingChoice");
-    if (savedChoice === "bokadirekt") {
-      rememberCheckbox.checked = true;
-    }
-    
-    rememberCheckbox.addEventListener("change", () => {
-      if (rememberCheckbox.checked) {
-        localStorage.setItem("bookingChoice", "bokadirekt");
-      } else {
-        localStorage.removeItem("bookingChoice");
-      }
-    });
-  }
 }
 
 /* ─── Reveal animations ─────────────────────────────── */
