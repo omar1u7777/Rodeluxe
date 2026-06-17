@@ -1243,7 +1243,6 @@ function initTypewriter() {
 }
 
 /* ─── Boot ──────────────────────────────────────────── */
-setupCustomCursor();
 initPreloader();
 initDarkMode();
 initHamburger();
@@ -1255,6 +1254,7 @@ setHeroBackground();
 setupHeroParticles();
 renderServices();
 renderGallery();
+setupCustomCursor();
 renderContact();
 setBookingLinks();
 setupLightbox();
