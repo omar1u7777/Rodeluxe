@@ -1013,7 +1013,7 @@ async function initHero3D() {
   if (heroSection) {
     new IntersectionObserver((entries) => {
       running = entries[0]?.isIntersecting ?? true;
-      if (running) loop();
+      if (running) startLoop();
     }, { threshold: 0.06 }).observe(heroSection);
   }
 
@@ -1023,9 +1023,16 @@ async function initHero3D() {
 
   const clock = new THREE.Clock();
   let raf = 0;
+  let looping = false;
+
+  function startLoop() {
+    if (looping) return;
+    looping = true;
+    loop();
+  }
 
   function loop() {
-    if (!running) return;
+    if (!running) { looping = false; return; }
     raf = requestAnimationFrame(loop);
 
     const t = clock.getElapsedTime();
@@ -1056,7 +1063,7 @@ async function initHero3D() {
     renderer.render(scene, camera);
   }
 
-  loop();
+  startLoop();
 }
 
 /* ─── Open / Closed Status ──────────────────────────── */
