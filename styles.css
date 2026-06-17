@@ -1101,10 +1101,14 @@ select:focus-visible {
 }
 
 .owner-img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 20px;
+  display: block;
+  width: clamp(200px, 24vw, 300px);
+  height: clamp(200px, 24vw, 300px);
+  max-width: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
   box-shadow:
     0 25px 50px rgba(0,0,0,0.5),
     0 0 100px rgba(201,169,110,0.3),
@@ -2142,9 +2146,6 @@ select:focus-visible {
   .owner-3d-card:hover .owner-3d-image {
     transform: translateZ(25px) rotateY(3deg);
   }
-  .owner-img {
-    max-width: 280px;
-  }
   .owner-img-placeholder {
     max-width: 280px;
     height: 350px;
@@ -2191,7 +2192,6 @@ select:focus-visible {
   .hero               { min-height: 90vh; }
   .hero__content      { padding-top: 40px; }
   .owner-3d-card      { gap: 30px; }
-  .owner-img          { max-width: 320px; }
 }
 
 /* ─── Short Screens (height ≤ 600px) ────────────────── */
@@ -2204,7 +2204,6 @@ select:focus-visible {
   .container          { max-width: 1320px; }
   .h1                 { font-size: clamp(56px, 6vw, 96px); }
   .owner-3d-card      { max-width: 1100px; gap: 60px; }
-  .owner-img          { max-width: 480px; }
 }
 
 /* ─── 4K Displays (≥ 1920px) ────────────────────────── */
