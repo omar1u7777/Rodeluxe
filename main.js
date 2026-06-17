@@ -1,4 +1,4 @@
-import { ABOUT_TEXT, BOOKING_URL, BRAND, CONTACT, GALLERY_IMAGES, SERVICES } from "./content.js?v=20260504-42";
+import { ABOUT_TEXT, BOOKING_URL, BRAND, CONTACT, GALLERY_IMAGES, SERVICES } from "./content.js?v=20260617-43";
 
 /* ─── Feature flags ─────────────────────────────────── */
 const PREFERS_REDUCED_MOTION = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
@@ -191,7 +191,7 @@ function setBookingLinks() {
       const preferredUrl = savedPreference === "bokadirekt"
         ? "https://www.bokadirekt.se/places/rodeluxe-130945"
         : "https://book.heygoldie.com/Rodeluxe";
-      window.open(preferredUrl, "_blank");
+      window.open(preferredUrl, "_blank", "noopener");
     } else {
       // Show modal
       modal.setAttribute("aria-hidden", "false");
@@ -337,7 +337,7 @@ function renderGallery() {
     figure.setAttribute("tabindex", "0");
     figure.setAttribute("aria-label", `Öppna ${img.alt}`);
     figure.innerHTML = `
-      <img src="${img.src}" alt="${img.alt}" loading="lazy" decoding="async" />
+      <img src="${img.src}" alt="${img.alt}" width="320" height="240" loading="lazy" decoding="async" />
       <div class="gallery-item__open">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Förstora
@@ -498,42 +498,9 @@ function setupContactForm() {
       console.error("Form submission error:", error);
       if (status) { status.textContent = "Ett fel uppstod. Försök igen eller kontakta oss direkt."; status.className = "form-status error"; }
     } finally {
-      if (submit) { submit.disabled = false; submit.textContent = "Skicka"; }
+      if (submit) { submit.disabled = false; submit.textContent = "Skicka meddelande"; }
     }
   });
-}
-
-/* ─── Booking Modal ──────────────────────────────────── */
-function setupBookingModal() {
-  const modal = document.getElementById("bookingModal");
-  const openBtn = document.getElementById("openBookingModal");
-  const closeBtn = document.getElementById("closeBookingModal");
-  const rememberCheckbox = document.getElementById("rememberBookingChoice");
-  
-  if (!modal || !openBtn || !closeBtn) return;
-
-  openBtn.addEventListener("click", () => modal.classList.add("active"));
-  closeBtn.addEventListener("click", () => modal.classList.remove("active"));
-  
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.classList.remove("active");
-  });
-
-  // Remember booking choice
-  if (rememberCheckbox) {
-    const savedChoice = localStorage.getItem("bookingChoice");
-    if (savedChoice === "bokadirekt") {
-      rememberCheckbox.checked = true;
-    }
-    
-    rememberCheckbox.addEventListener("change", () => {
-      if (rememberCheckbox.checked) {
-        localStorage.setItem("bookingChoice", "bokadirekt");
-      } else {
-        localStorage.removeItem("bookingChoice");
-      }
-    });
-  }
 }
 
 /* ─── Reveal animations ─────────────────────────────── */
@@ -1013,7 +980,7 @@ async function initHero3D() {
   if (heroSection) {
     new IntersectionObserver((entries) => {
       running = entries[0]?.isIntersecting ?? true;
-      if (running) loop();
+      if (running) startLoop();
     }, { threshold: 0.06 }).observe(heroSection);
   }
 
@@ -1023,9 +990,16 @@ async function initHero3D() {
 
   const clock = new THREE.Clock();
   let raf = 0;
+  let looping = false;
+
+  function startLoop() {
+    if (looping) return;
+    looping = true;
+    loop();
+  }
 
   function loop() {
-    if (!running) return;
+    if (!running) { looping = false; return; }
     raf = requestAnimationFrame(loop);
 
     const t = clock.getElapsedTime();
@@ -1056,7 +1030,7 @@ async function initHero3D() {
     renderer.render(scene, camera);
   }
 
-  loop();
+  startLoop();
 }
 
 /* ─── Open / Closed Status ──────────────────────────── */
@@ -1236,7 +1210,6 @@ function initTypewriter() {
 }
 
 /* ─── Boot ──────────────────────────────────────────── */
-setupCustomCursor();
 initPreloader();
 initDarkMode();
 initHamburger();
@@ -1248,6 +1221,7 @@ setHeroBackground();
 setupHeroParticles();
 renderServices();
 renderGallery();
+setupCustomCursor();
 renderContact();
 setBookingLinks();
 setupLightbox();

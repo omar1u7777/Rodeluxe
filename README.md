@@ -39,15 +39,18 @@ Installera/aktivera "Live Server" och starta servern på `index.html`.
 
 ```
 Rodeluxe/
-├── index.html      # Huvudsidan
-├── styles.css      # All styling
-├── main.js         # JavaScript-funktionalitet
-├── content.js      # Innehåll (tjänster, recensioner, etc)
-├── logo.webp       # Logo
+├── index.html            # Huvudsidan
+├── styles.css            # All styling
+├── main.js               # JavaScript-funktionalitet
+├── content.js            # Innehåll (tjänster, recensioner, kontakt)
+├── logo.webp             # Logo
+├── agaren.jpg            # Bild på ägaren
 ├── crcode_rodeluxe.webp  # QR-kod för bokning
-├── robots.txt      # SEO
-├── sitemap.xml     # SEO
-└── site.webmanifest  # PWA
+├── favicon.svg           # Favicon
+├── robots.txt            # SEO
+├── sitemap.xml           # SEO
+├── site.webmanifest      # PWA
+└── vercel.json           # Vercel-config (säkerhetsheaders, cache, CSP)
 ```
 
 
@@ -56,12 +59,12 @@ Rodeluxe/
 
 - **High Lighthouse Scores:** Accessibility 89+, Best Practices 92, SEO 92+, PWA 80
 - **Technical SEO:** `sitemap.xml`, `robots.txt`, `site.webmanifest` för bättre synlighet
-- **Zero Dependencies:** Vanilla JS/CSS för maximal prestanda
+- **Inga byggsteg:** Vanilla JS/CSS utan bundler eller npm-beroenden (Three.js laddas vid behov från CDN)
 - **Image Optimization:** Bilder optimerade till .webp för bättre performance
 
 ## Deployment
 
-Sidan är deployad på Vercel: https://rodeluxe.vercel.app
+Sidan är live på https://rodeluxesalong.se/ och deployas via Vercel med automatisk CI/CD från `main`.
 
 **Säkerhet:** Kontaktformulär hanteras via Formspree utan behov av egen backend-server, vilket säkerställer att formulärdata hanteras säkert och effektivt.
 
@@ -69,11 +72,11 @@ Sidan är deployad på Vercel: https://rodeluxe.vercel.app
 
 ## 🛠 Teknisk Stack & Arkitektur
 
-- **Frontend:** Vanilla JS (ES6+) med fokus på hög prestanda och noll dependencies
+- **Frontend:** Vanilla JS (ES6+) med fokus på hög prestanda och inga byggsteg
 - **3D Grafik:** Three.js för en interaktiv och unik användarupplevelse
 - **SEO & PWA:** Optimerad med metadata, sitemaps och webmanifest för mobilvänlighet
 - **Deployment:** CI/CD via Vercel med automatisk form-hantering (Formspree)
 
 ## License
 
-MIT
+Proprietär källkods-tillgänglig licens – koden ägs av Omar Ahmad Alhaek och är licensierad exklusivt för produktionsbruk av Rodeluxe Frisörsalong. Se [LICENSE](LICENSE) för fullständiga villkor.

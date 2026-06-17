@@ -724,25 +724,31 @@ select:focus-visible {
   border: 1px solid rgba(201, 169, 110, 0.25);
   overflow: hidden;
 }
-.bonus-card__logo { text-align: center; z-index: 2; }
-.bonus-card__rd {
-  width: 80px; height: 80px;
-  border-radius: 50%;
-  border: 2px solid var(--gold);
-  display: flex; align-items: center; justify-content: center;
-  font-family: "Cinzel", serif;
-  font-size: 28px; font-weight: 700;
-  color: var(--gold);
-  margin: 0 auto 12px;
-  background: radial-gradient(circle, rgba(201,169,110,0.08), transparent 70%);
-  box-shadow: 0 0 30px rgba(201,169,110,0.15), inset 0 0 20px rgba(201,169,110,0.05);
+.bonus-card__teaser { text-align: center; z-index: 2; padding: 0 28px; }
+.bonus-card__teaser-icon {
+  display: block;
+  font-size: 42px;
+  margin-bottom: 16px;
 }
-.bonus-card__brand {
+.bonus-card__teaser-title {
+  margin: 0 0 12px;
   font-family: "Cinzel", serif;
-  font-size: 17px; font-weight: 600;
-  letter-spacing: 0.22em;
+  font-size: 24px; font-weight: 700;
+  letter-spacing: 0.2em;
   color: var(--gold);
   text-transform: uppercase;
+}
+.bonus-card__teaser-hint {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.6);
+  animation: bonusHintPulse 2.4s ease-in-out infinite;
+}
+@keyframes bonusHintPulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
 }
 .bonus-card__decoration {
   position: absolute; left: 50%;
@@ -1101,10 +1107,14 @@ select:focus-visible {
 }
 
 .owner-img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 20px;
+  display: block;
+  width: clamp(200px, 24vw, 300px);
+  height: clamp(200px, 24vw, 300px);
+  max-width: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
   box-shadow:
     0 25px 50px rgba(0,0,0,0.5),
     0 0 100px rgba(201,169,110,0.3),
@@ -1235,7 +1245,7 @@ select:focus-visible {
 
 .owner-title {
   font-size: clamp(14px, 2.5vw, 18px);
-  color: var(--text-muted);
+  color: var(--muted);
   margin-bottom: 20px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1244,7 +1254,7 @@ select:focus-visible {
 .owner-bio {
   font-size: clamp(14px, 2.5vw, 16px);
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: var(--text-2);
   margin-bottom: 25px;
 }
 
@@ -1426,8 +1436,8 @@ select:focus-visible {
 .contact__qr-text { margin-top: 16px; text-align: center; }
 .contact__qr-text h4 { margin: 0 0 8px; font-size: 16px; font-weight: 600; color: var(--text); }
 .contact__qr-text p { margin: 0; font-size: 13px; color: var(--muted); }
-.contact__qr-link { display: inline-block; margin-top: 12px; font-size: 13px; color: var(--accent); text-decoration: none; transition: color 0.2s ease; }
-.contact__qr-link:hover { color: var(--accent-hover); text-decoration: underline; }
+.contact__qr-link { display: inline-block; margin-top: 12px; font-size: 13px; color: var(--gold); text-decoration: none; transition: color 0.2s ease; }
+.contact__qr-link:hover { color: var(--gold-2); text-decoration: underline; }
 .kv { display: grid; gap: 0; margin-top: 14px; }
 .kv__row {
   display: flex; align-items: flex-start;
@@ -2142,9 +2152,6 @@ select:focus-visible {
   .owner-3d-card:hover .owner-3d-image {
     transform: translateZ(25px) rotateY(3deg);
   }
-  .owner-img {
-    max-width: 280px;
-  }
   .owner-img-placeholder {
     max-width: 280px;
     height: 350px;
@@ -2191,7 +2198,6 @@ select:focus-visible {
   .hero               { min-height: 90vh; }
   .hero__content      { padding-top: 40px; }
   .owner-3d-card      { gap: 30px; }
-  .owner-img          { max-width: 320px; }
 }
 
 /* ─── Short Screens (height ≤ 600px) ────────────────── */
@@ -2204,7 +2210,6 @@ select:focus-visible {
   .container          { max-width: 1320px; }
   .h1                 { font-size: clamp(56px, 6vw, 96px); }
   .owner-3d-card      { max-width: 1100px; gap: 60px; }
-  .owner-img          { max-width: 480px; }
 }
 
 /* ─── 4K Displays (≥ 1920px) ────────────────────────── */
