@@ -1209,7 +1209,16 @@ function initTypewriter() {
   setTimeout(tick, 1200);
 }
 
+/* ─── Web fonts ─────────────────────────────────────── */
+/* Stylesheet ships with media="print" so it never blocks the first
+   paint; switch it on once the page script runs. */
+function enableWebFonts() {
+  const link = document.getElementById("fontStylesheet");
+  if (link) link.media = "all";
+}
+
 /* ─── Boot ──────────────────────────────────────────── */
+enableWebFonts();
 initPreloader();
 initDarkMode();
 initHamburger();
