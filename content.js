@@ -97,7 +97,7 @@ export const SERVICES = [
       {
         name: "Barnklippning",
         durationMin: 30,
-        price: { type: "fixed", sek: 250 },
+        price: { type: "fixed", sek: 290 },
         description: "Upp till 10 år.",
         bookingUrl: "https://www.bokadirekt.se/boka-tjanst/rodeluxe-130945/barn-klippning-3289291",
       },

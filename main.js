@@ -1,4 +1,4 @@
-import { ABOUT_TEXT, BOOKING_URL, BRAND, CONTACT, GALLERY_IMAGES, SERVICES } from "./content.js?v=20260617-43";
+import { ABOUT_TEXT, BOOKING_URL, BRAND, CONTACT, GALLERY_IMAGES, SERVICES } from "./content.js?v=20260830-44";
 
 /* ─── Feature flags ─────────────────────────────────── */
 const PREFERS_REDUCED_MOTION = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
