@@ -62,6 +62,43 @@ Rodeluxe/
 - **Inga byggsteg:** Vanilla JS/CSS utan bundler eller npm-beroenden (Three.js laddas vid behov från CDN)
 - **Image Optimization:** Bilder optimerade till .webp för bättre performance
 
+## Automatisk uppdatering av Google-betyg
+
+Betyget och antalet recensioner i hero-sektionen och i JSON-LD (`aggregateRating`)
+uppdateras dagligen av [`.github/workflows/update-reviews.yml`](.github/workflows/update-reviews.yml),
+som kör [`scripts/update-reviews.mjs`](scripts/update-reviews.mjs) mot Google Places API (New).
+Skriptet skriver till `index.html` och `content.js`, bumpar `?v=`-cachebusting när
+`content.js` ändras, och committar bara när siffrorna faktiskt skiljer sig.
+
+Siffrorna är hårdkodade i HTML mellan körningarna, så sidan fungerar oförändrat
+även om API:t är nere. Skriptet avbryter utan att committa om Google returnerar
+orimliga värden (betyg utanför 1-5, eller ett recensionsantal som fallit mer än 20 %).
+
+### Engångsuppsättning
+
+1. Skapa en API-nyckel i Google Cloud med **Places API (New)** aktiverat.
+   Begränsa nyckeln till det API:t (den används bara server-side i Actions).
+2. Lägg in nyckeln som repository secret:
+
+   ```bash
+   gh secret set GOOGLE_PLACES_API_KEY --repo omar1u7777/Rodeluxe
+   ```
+
+3. Kör workflowen en gång manuellt:
+
+   ```bash
+   gh workflow run "Uppdatera Google-betyg" --repo omar1u7777/Rodeluxe
+   ```
+
+4. Loggen skriver ut plats-ID:t. Spara det som variabel för att slippa ett
+   söknings-anrop per körning:
+
+   ```bash
+   gh variable set GOOGLE_PLACE_ID --repo omar1u7777/Rodeluxe --body "ChIJ..."
+   ```
+
+Med ett anrop per dygn hamnar förbrukningen långt under Google Places gratisnivå.
+
 ## Deployment
 
 Sidan är live på https://rodeluxesalong.se/ och deployas via Vercel med automatisk CI/CD från `main`.

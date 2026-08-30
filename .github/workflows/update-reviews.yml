@@ -1,0 +1,42 @@
+name: Uppdatera Google-betyg
+
+on:
+  schedule:
+    # Varje dag 04:17 UTC (~06:17 svensk sommartid).
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-reviews
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Hämta betyg från Google Places
+        id: reviews
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          GOOGLE_PLACE_ID: ${{ vars.GOOGLE_PLACE_ID }}
+        run: node scripts/update-reviews.mjs
+
+      - name: Committa om siffrorna ändrats
+        if: steps.reviews.outputs.changed == 'true'
+        env:
+          RATING: ${{ steps.reviews.outputs.rating }}
+          COUNT: ${{ steps.reviews.outputs.count }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore(content): betyg $RATING av $COUNT recensioner"
+          git push
