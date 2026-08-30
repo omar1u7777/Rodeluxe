@@ -182,6 +182,18 @@ export const SERVICES = [
 
 export const GALLERY_IMAGES = [
   {
+    src: "./skaggvard-styling.webp?v=1",
+    alt: "Skäggvård och styling hos Rodeluxe i Kristianstad",
+  },
+  {
+    src: "./herrklippning-fade.webp?v=1",
+    alt: "Herrklippning med fade hos Rodeluxe i Kristianstad",
+  },
+  {
+    src: "./nojd-kund.webp?v=1",
+    alt: "Nöjd kund efter klippning hos Rodeluxe i Kristianstad",
+  },
+  {
     src: "https://cdn.bokadirekt.se/ucdn/ac19a524-46c6-4e39-9604-b183c95d1361/",
     alt: "Rodeluxe – salongbild 1",
   },
