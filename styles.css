@@ -904,8 +904,10 @@ select:focus-visible {
 /* ─── Stats ──────────────────────────────────────────── */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+  max-width: 640px;
+  margin-inline: auto;
 }
 .stat-card {
   padding: 32px 24px;
