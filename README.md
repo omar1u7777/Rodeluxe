@@ -99,6 +99,27 @@ orimliga värden (betyg utanför 1-5, eller ett recensionsantal som fallit mer �
 
 Med ett anrop per dygn hamnar förbrukningen långt under Google Places gratisnivå.
 
+### Recensionstexterna
+
+Betyg och antal checkas in i repot av workflowen ovan. Recensionstexterna gör de
+inte — Googles villkor tillåter cachning för prestanda men inte permanent
+lagring. De hämtas i stället vid körning av [`api/reviews.mjs`](api/reviews.mjs),
+en Vercel-funktion som frågar Places API och cachas ett dygn på edgen.
+
+`hydrateGoogleReviews()` i `main.js` byter ut recensionskorten mot svaret. Går
+anropet inte igenom står de statiska korten i `index.html` kvar, så sektionen är
+aldrig tom. Recensionstext är tredjepartsinnehåll och sätts alltid med
+`textContent`; länkar släpps bara igenom med http(s).
+
+Funktionen behöver samma nyckel som workflowen, fast i Vercel:
+
+1. Vercel → projektet → *Settings* → *Environment Variables*
+2. `GOOGLE_PLACES_API_KEY` = nyckeln, för Production och Preview
+3. Valfritt: `GOOGLE_PLACE_ID` = `ChIJge-wbXYDVEYRzvr4opWpFpM` (annars används
+   samma värde som standard i koden)
+
+Utan nyckeln svarar endpointen `503` och sidan visar de statiska korten.
+
 ## Deployment
 
 Sidan är live på https://rodeluxesalong.se/ och deployas via Vercel med automatisk CI/CD från `main`.

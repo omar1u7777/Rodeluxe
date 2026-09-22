@@ -585,9 +585,8 @@ function setupLazyLoading() {
 }
 
 /* ─── Tilt on service cards ─────────────────────────── */
-function setupTilt() {
+function setupTilt(items = [...document.querySelectorAll(".service-card.tilt, .testimonial.glass")]) {
   if (PREFERS_REDUCED_MOTION || IS_COARSE_POINTER) return;
-  const items = [...document.querySelectorAll(".service-card.tilt, .testimonial.glass")];
   const max   = 7;
 
   for (const el of items) {
@@ -1217,6 +1216,93 @@ function enableWebFonts() {
   if (link) link.media = "all";
 }
 
+/* ─── Google-recensioner ────────────────────────────── */
+/**
+ * Byter ut de statiska recensionskorten mot färska från Google.
+ *
+ * Misslyckas hämtningen står korten i index.html kvar — de renderas ändå
+ * direkt, så sidan har aldrig ett tomt läge och hoppar inte till.
+ *
+ * Recensionstexten är tredjepartsinnehåll och sätts därför alltid med
+ * textContent, aldrig innerHTML.
+ */
+/** Länken kommer från ett externt API – släpp bara igenom http(s). */
+function safeHttpUrl(...candidates) {
+  for (const candidate of candidates) {
+    if (!candidate) continue;
+    try {
+      const parsed = new URL(candidate, location.href);
+      if (parsed.protocol === "https:" || parsed.protocol === "http:") return parsed.href;
+    } catch { /* ogiltig URL – prova nästa */ }
+  }
+  return CONTACT.mapsUrl;
+}
+
+function buildReviewCard({ author, rating, text, when, url }, mapsUrl) {
+  const filled = Math.max(1, Math.min(5, Math.round(rating)));
+
+  const stars = document.createElement("div");
+  stars.className = "testimonial__stars";
+  stars.setAttribute("aria-label", `${filled} stjärnor`);
+  stars.textContent = "★".repeat(filled) + "☆".repeat(5 - filled);
+
+  const quote = document.createElement("blockquote");
+  quote.className = "testimonial__quote";
+  quote.textContent = `“${text}”`;
+
+  const avatar = document.createElement("div");
+  avatar.className = "testimonial__avatar";
+  avatar.setAttribute("aria-hidden", "true");
+  avatar.textContent = ([...author][0] ?? "?").toUpperCase();
+
+  const name = document.createElement("div");
+  name.className = "testimonial__name";
+  name.textContent = author;
+
+  const link = document.createElement("a");
+  link.href = safeHttpUrl(url, mapsUrl);
+  link.target = "_blank";
+  link.rel = "noopener noreferrer nofollow";
+  link.textContent = "Google";
+
+  const via = document.createElement("div");
+  via.className = "testimonial__via";
+  via.append("via ", link, ` · ${filled}/5${when ? ` · ${when}` : ""}`);
+
+  const meta = document.createElement("div");
+  meta.append(name, via);
+
+  const authorRow = document.createElement("div");
+  authorRow.className = "testimonial__author";
+  authorRow.append(avatar, meta);
+
+  const card = document.createElement("div");
+  card.className = "testimonial glass";
+  card.append(stars, quote, authorRow);
+  return card;
+}
+
+async function hydrateGoogleReviews() {
+  const root = document.querySelector(".testimonials");
+  if (!root) return;
+
+  let data;
+  try {
+    const res = await fetch("/api/reviews", { headers: { Accept: "application/json" } });
+    if (!res.ok) return;
+    data = await res.json();
+  } catch {
+    return;
+  }
+
+  // .stagger-children animerar bara de åtta första barnen.
+  const reviews = (Array.isArray(data?.reviews) ? data.reviews : []).slice(0, 8);
+  if (!reviews.length) return;
+
+  root.replaceChildren(...reviews.map(r => buildReviewCard(r, data.mapsUrl)));
+  setupTilt([...root.children]);
+}
+
 /* ─── Boot ──────────────────────────────────────────── */
 enableWebFonts();
 initPreloader();
@@ -1249,3 +1335,4 @@ initServiceFilter();
 initTypewriter();
 setupLazyThreeJS();
 setupBonusCardFlip();
+hydrateGoogleReviews().catch(() => {});

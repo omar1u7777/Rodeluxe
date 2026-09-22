@@ -103,6 +103,10 @@ html = html
   )
   .replace(/aria-label="Betyg [^"]*"/g, `aria-label="Betyg ${ratingStr} av 5"`)
   .replace(
+    /(<span class="owner-badge">⭐ )[\d.]+(\/5 Betyg<\/span>)/,
+    `$1${ratingStr}$2`,
+  )
+  .replace(
     /(<div class="hero__stars"[^>]*>)[\s\S]*?(<\/div>)/,
     (_, open, close) =>
       `${open}\n                ${[...stars].map((s) => `<span>${s}</span>`).join("")}\n              ${close}`,
