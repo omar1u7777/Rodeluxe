@@ -5,7 +5,7 @@ export const BRAND = {
   city: "Kristianstad",
   rating: {
     value: 5.0,
-    count: 165,
+    count: 166,
   },
   tagline: "Premium barberarupplevelse med precision, stil och känsla.",
 };
