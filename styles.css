@@ -1556,7 +1556,8 @@ select:focus-visible {
   gap: 16px; flex-wrap: wrap;
   padding-top: 20px;
 }
-.footer__copy { color: var(--muted-2); }
+.footer__copy { color: var(--muted); }
+.footer__legal { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .footer__socials {
   display: flex; align-items: center;
   gap: 6px; flex-wrap: wrap;
@@ -2185,7 +2186,8 @@ select:focus-visible {
   }
 }
 
-.footer__dev { color: var(--gold); text-decoration: none; transition: opacity 0.2s; }
+.footer__dev { color: #7a5f30; text-decoration: none; transition: opacity 0.2s; }
+[data-theme="dark"] .footer__dev { color: var(--gold); }
 .footer__dev:hover { opacity: 0.75; }
 
 /* ─── Extra Small (≤ 390px) — iPhone SE / small Android ─ */
